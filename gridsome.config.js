@@ -12,6 +12,8 @@ module.exports = {
     Post: '/:title',
     Tag: '/tag/:id'
   },
+  siteUrl: 'https://nirgalz.github.io',
+  pathPrefix: '/nhweb',
 
   plugins: [
     {
