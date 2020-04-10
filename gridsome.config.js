@@ -13,7 +13,6 @@ module.exports = {
     Tag: '/tag/:id'
   },
   siteUrl: 'https://nirgalz.github.io',
-  pathPrefix: '/nirgalz',
 
   plugins: [
     {
