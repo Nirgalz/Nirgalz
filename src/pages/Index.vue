@@ -18,8 +18,7 @@ query {
       node {
         id
         title
-        date (format: "D. MMMM YYYY")
-        timeToRead
+        year
         description
         cover_image (width: 770, height: 380, blur: 10)
         path
