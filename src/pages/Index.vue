@@ -44,14 +44,6 @@ export default {
   },
   metaInfo: {
     title: 'Home'
-  },
-  plugins: [
-    {
-      use: '@gridsome/plugin-google-analytics',
-      options: {
-        id: 'UA-30289272-4'
-      }
-    }
-  ]
+  }
 }
 </script>
