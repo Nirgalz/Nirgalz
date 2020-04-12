@@ -9,7 +9,7 @@ import VueAnalytics from 'vue-analytics'
 export default function (Vue, { router, head, isClient }) {
 
   // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout),
+  Vue.component('Layout', DefaultLayout);
   Vue.use(VueAnalytics, {
     id: 'UA-30289272-4'
   })
