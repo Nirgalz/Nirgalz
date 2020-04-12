@@ -22,6 +22,7 @@ query Tag ($id: ID!) {
             path
             year
             description
+            cover_image (width: 860, blur: 10)
             content
           }
         }
