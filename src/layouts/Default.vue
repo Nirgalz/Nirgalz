@@ -3,10 +3,15 @@
 
     <header class="header">
       <div class="header__left">
-        <Logo v-if="showLogo" /> 
+<!--        <Logo v-if="showLogo" />-->
+        <g-link to="/">Home</g-link>
+        |
+        <g-link to="/projects">Projects</g-link>
+        |
+        <g-link to="/about">About</g-link>
       </div>
-      
-      <div class="header__right">        
+
+      <div class="header__right">
         <ToggleTheme />
       </div>
     </header>

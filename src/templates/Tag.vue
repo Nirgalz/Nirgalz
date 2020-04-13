@@ -14,7 +14,7 @@
 query Tag ($id: ID!) {
   tag (id: $id) {
     title
-    belongsTo {
+    belongsTo(sortBy: "year") {
       edges {
         node {
           ...on Post {

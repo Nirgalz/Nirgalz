@@ -4,29 +4,25 @@
     <Author :show-title="true" />
 
     <!-- List posts -->
-    <div class="posts">
-      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
+<!--    <div class="posts">-->
+<!--      <PostCard v-for="edge in $page.tags.edges" :key="edge.node.id" :post="edge.node"/>-->
+<!--    </div>-->
+    <div class="post-all-tags">
+      <g-link class="post-tags__link" v-for="edge in $page.tags.edges" :key="edge.node.id" :to="edge.node.path">
+        <span>#</span> {{ edge.node.title }}
+      </g-link>
     </div>
-
   </Layout>
 </template>
 
 <page-query>
 query {
-  posts: allPost(filter: { published: { eq: true }}, sortBy: "year" ) {
+  tags: allTag{
     edges {
       node {
-        id
-        title
-        year
-        description
-        cover_image (width: 770, height: 380, blur: 10)
-        path
-        tags {
-          id
-          title
-          path
-        }
+  id
+  title
+  path
       }
     }
   }
@@ -47,3 +43,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .post-all-tags {
+    margin: 1em 0 0;
+
+    &__link {
+      margin-right: .7em;
+      font-size: .8em;
+      color: currentColor;
+      text-decoration: none;
+      background-color: var(--bg-content-color);
+      color: currentColor!important; //Todo: remove important;
+      padding: .5em;
+      border-radius: var(--radius);
+    }
+  }
+</style>
