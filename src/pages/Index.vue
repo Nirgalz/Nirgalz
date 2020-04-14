@@ -7,9 +7,20 @@
 <!--    <div class="posts">-->
 <!--      <PostCard v-for="edge in $page.tags.edges" :key="edge.node.id" :post="edge.node"/>-->
 <!--    </div>-->
+
+<!--      <div>-->
+<!--        <simple-carousel-container loop :watch-it="photos">-->
+<!--          <simple-carousel-item v-for="(photo, index) in photos" :key="index">-->
+<!--            <img :src="photo">-->
+<!--          </simple-carousel-item>-->
+<!--        </simple-carousel-container>-->
+<!--      </div>-->
+
+
+
     <div class="post-all-tags">
-      <g-link class="post-tags__link" v-for="edge in $page.tags.edges" :key="edge.node.id" :to="edge.node.path">
-        <span>#</span> {{ edge.node.title }}
+      <g-link class="post-all-tags__link" v-for="edge in $page.tags.edges" :key="edge.node.id" :to="edge.node.path">
+        <span>#{{ edge.node.title }}</span>
       </g-link>
     </div>
   </Layout>
@@ -20,9 +31,9 @@ query {
   tags: allTag{
     edges {
       node {
-  id
-  title
-  path
+        id
+        title
+        path
       }
     }
   }
@@ -32,21 +43,36 @@ query {
 <script>
 import Author from '~/components/Author.vue'
 import PostCard from '~/components/PostCard.vue'
+import { SimpleCarouselContainer, SimpleCarouselItem } from 'vue-simple-carousel';
 
 export default {
   components: {
     Author,
-    PostCard
+    PostCard,
+    SimpleCarouselContainer,
+    SimpleCarouselItem
   },
   metaInfo: {
     title: 'Home'
+  },
+  data() {
+    return {
+      photos: [
+        '../content/posts/images/easy-billing.jpg',
+        './images/easy-billing2.jpg',
+        './images/easy-billing2.jpg',
+      ]
+    }
   }
 }
 </script>
 
 <style lang="scss">
   .post-all-tags {
-    margin: 1em 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1% 20% 1% 20%;
 
     &__link {
       margin-right: .7em;

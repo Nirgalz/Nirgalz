@@ -15,7 +15,9 @@
     "gh-pages": "^2.2.0",
     "gridsome": "^0.7.0",
     "minimist": ">=0.2.1",
-    "vue-analytics": "^5.22.1"
+    "vue-analytics": "^5.22.1",
+    "vue-simple-carousel": "^0.4.3",
+    "vue-simple-slider": "^1.0.2"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",
