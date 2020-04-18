@@ -2,22 +2,6 @@
   <Layout :show-logo="false">
     <!-- Author intro -->
     <Author :show-title="true" />
-
-    <!-- List posts -->
-<!--    <div class="posts">-->
-<!--      <PostCard v-for="edge in $page.tags.edges" :key="edge.node.id" :post="edge.node"/>-->
-<!--    </div>-->
-
-<!--      <div>-->
-<!--        <simple-carousel-container loop :watch-it="photos">-->
-<!--          <simple-carousel-item v-for="(photo, index) in photos" :key="index">-->
-<!--            <img :src="photo">-->
-<!--          </simple-carousel-item>-->
-<!--        </simple-carousel-container>-->
-<!--      </div>-->
-
-
-
     <div class="post-all-tags">
       <g-link class="post-all-tags__link" v-for="edge in $page.tags.edges" :key="edge.node.id" :to="edge.node.path">
         <span>#{{ edge.node.title }}</span>
@@ -48,21 +32,10 @@ import { SimpleCarouselContainer, SimpleCarouselItem } from 'vue-simple-carousel
 export default {
   components: {
     Author,
-    PostCard,
-    SimpleCarouselContainer,
-    SimpleCarouselItem
+    PostCard
   },
   metaInfo: {
     title: 'Home'
-  },
-  data() {
-    return {
-      photos: [
-        '../content/posts/images/easy-billing.jpg',
-        './images/easy-billing2.jpg',
-        './images/easy-billing2.jpg',
-      ]
-    }
   }
 }
 </script>

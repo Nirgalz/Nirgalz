@@ -47,3 +47,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+  }
+</style>

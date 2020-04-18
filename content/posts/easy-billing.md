@@ -1,12 +1,12 @@
 ---
-title: easy billing
+title: Easy billing
 year: 2017
 published: true
-tags: ['javascript', 'electron', 'html', 'css']
+tags: ['javascript']
 series: false
 cover_image: ./images/easy-billing.jpg
 canonical_url: false
-description: "Simple desktop designed for a VFX designer working as a freelance"
+description: "Simple desktop billing app for freelancers"
 ---
 
 [Source code](https://github.com/Nirgalz/easy-billing)

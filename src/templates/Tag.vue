@@ -22,7 +22,7 @@ query Tag ($id: ID!) {
             path
             year
             description
-            cover_image (width: 860, blur: 10)
+            cover_image (width: 770, height: 380, blur: 10)
             content
           }
         }
@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+  }
 </style>
 
