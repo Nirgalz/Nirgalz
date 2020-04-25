@@ -6,6 +6,10 @@
       <g-link class="post-all-tags__link" v-for="edge in $page.tags.edges" :key="edge.node.id" :to="edge.node.path">
         <span>#{{ edge.node.title }}</span>
       </g-link>
+
+    </div>
+    <div class="posts">
+      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
     </div>
   </Layout>
 </template>
@@ -20,6 +24,23 @@ query {
         path
       }
     }
+  },
+  posts: allPost(filter: { published: { eq: true }}, sortBy: "year" ) {
+  edges {
+  node {
+  id
+  title
+  year
+  description
+  cover_image (width: 770, height: 380, blur: 10)
+  path
+  tags {
+  id
+  title
+  path
+  }
+  }
+  }
   }
 }
 </page-query>
@@ -27,7 +48,6 @@ query {
 <script>
 import Author from '~/components/Author.vue'
 import PostCard from '~/components/PostCard.vue'
-import { SimpleCarouselContainer, SimpleCarouselItem } from 'vue-simple-carousel';
 
 export default {
   components: {
@@ -50,12 +70,16 @@ export default {
     &__link {
       margin-right: .7em;
       font-size: .8em;
-      color: currentColor;
+      color: var(--link-color);
       text-decoration: none;
       background-color: var(--bg-content-color);
-      color: currentColor!important; //Todo: remove important;
       padding: .5em;
       border-radius: var(--radius);
     }
+  }
+
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
   }
 </style>

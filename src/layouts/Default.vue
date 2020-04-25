@@ -6,8 +6,6 @@
                 <!--        <Logo v-if="showLogo" />-->
                 <g-link to="/">Home</g-link>
                 |
-                <g-link to="/projects">Projects</g-link>
-                |
                 <g-link to="/about">About</g-link>
             </div>
 
@@ -78,6 +76,7 @@
         padding: calc(var(--space) / 2);
         text-align: center;
         font-size: .8em;
+        color: var(--title-color);
 
         > span {
             margin: 0 .35em;

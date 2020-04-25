@@ -70,7 +70,7 @@
         }
 
         &:hover {
-            box-shadow: 0 0px 50px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px 0 var(--title-color);
         }
 
         &__tags {

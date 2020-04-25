@@ -8,6 +8,7 @@ cover_image: ./images/vidviz2.jpg
 canonical_url: false
 description: "Video assets management tool"
 ---
+[Source code](https://github.com/Nirgalz/VidViz)
 
 Developed specifically for a VFX artist to facilitate his workflow, but generalist enough to be used in various cases where one wants to visualize and control multiple videos at the same time, or simply better manage a video library.
 As of now, it is primarily designed to be used as a local tool.
@@ -32,5 +33,3 @@ As of now, it is primarily designed to be used as a local tool.
 * Online version with security
 * SAAS service
 ...
-
-The source code isn't open source yet as I'm figuring out what's next.
