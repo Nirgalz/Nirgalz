@@ -7,15 +7,18 @@
 			{{ $static.metadata.siteName }}
 		</h1>
 
-		<p class="author__intro">
-			I write, code and play. Often all at once.
-		</p>
+<!--		<p class="author__intro">-->
+<!--			I write software.-->
+<!--		</p>-->
 
 		<p class="author__links">
-			<a href="https://www.linkedin.com/in/nicolas-hel/">linkedin</a>
-			<a href="//github.com/Nirgalz">GitHub</a>
+			<a href="https://github.com/Nirgalz">
+				<g-image src="../assets/images/GitHub-Mark-Light-64px.png" width="50" height="50"/>
+			</a>
+			<a href="https://www.linkedin.com/in/nicolas-hel/">
+				<g-image src="../assets/images/linkedin-2-icon-18-256.png" width="50" height="50"/>
+			</a>
 		</p>
-
 	</div>
 </template>
 
