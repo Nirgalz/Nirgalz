@@ -24,6 +24,10 @@ export default {
   	background-color: var(--bg-color);
   	padding: .5em;
   	border-radius: var(--radius);
+	  &:hover {
+		  box-shadow: 0 0 10px 0 var(--title-color);
+		  background-color: var(--bg-color);
+	  }
   }
 }
 </style>

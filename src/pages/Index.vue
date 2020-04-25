@@ -65,7 +65,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 1% 20% 1% 20%;
+    margin: 1% 20% 5% 20%;
 
     &__link {
       margin-right: .7em;
@@ -75,6 +75,9 @@ export default {
       background-color: var(--bg-content-color);
       padding: .5em;
       border-radius: var(--radius);
+      &:hover {
+        box-shadow: 0 0 10px 0 var(--title-color);
+      }
     }
   }
 

@@ -62,7 +62,9 @@
 
 
         &__image {
-            min-width: 100%;
+            display: block;
+            margin: auto;
+            max-width: 100%;
         }
 
         &__title {
@@ -88,6 +90,11 @@
             overflow: hidden;
             text-indent: -9999px;
             z-index: 0;
+        }
+        &__meta {
+            position: absolute;
+            right: calc(var(--space) * 1);
+            top: calc(var(--space) * 1);
         }
     }
 </style>
