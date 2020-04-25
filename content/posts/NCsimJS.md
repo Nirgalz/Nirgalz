@@ -12,6 +12,7 @@ description: "Non interactive simulation of an eco-system"
 [Source code](https://github.com/Nirgalz/NCsimJS) | [Demo](https://nirgalz.github.io/NCsimJS/)
 
 Simulation of an eco-system where multiple agents must cooperate in order to survive.
+To try it out, check the demo above, and click a few times on "speed +".
 
 ### features :
 * map generation with random tiles
@@ -25,6 +26,4 @@ Simulation of an eco-system where multiple agents must cooperate in order to sur
 * more buildings
 * switch all the logic server-side and make it interactive : play as a minion with AIs and /or other players
 * more parameters to play with
-
-To try it out, check the demo below, click a few times on "speed +".
 

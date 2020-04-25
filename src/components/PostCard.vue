@@ -62,9 +62,8 @@
 
 
         &__image {
-            display: block;
-            margin: auto;
-            max-width: 100%;
+            margin: 0 10px 5px 10px;
+
         }
 
         &__title {
