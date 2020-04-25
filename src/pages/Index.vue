@@ -65,7 +65,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 1% 20% 5% 20%;
+    margin: 1% 20% 70px 20%;
 
     &__link {
       margin-right: .7em;
