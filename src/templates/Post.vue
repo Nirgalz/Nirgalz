@@ -5,7 +5,7 @@
         {{ $page.post.title }}
       </h1>
 
-      <PostMeta :post="$page.post" />
+<!--      <PostMeta :post="$page.post" />-->
 
     </div>
 

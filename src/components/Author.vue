@@ -63,6 +63,12 @@ export default {
 		a {
 			margin: 0 .5em;
 		}
+		img:hover {
+			box-shadow: 0 0 10px 0 var(--title-color);
+		}
+		img {
+			border-radius: 50%;
+		}
 	}
 }
 </style>
