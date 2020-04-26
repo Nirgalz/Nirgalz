@@ -11,6 +11,7 @@
     <div class="posts">
       <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
     </div>
+    <contact></contact>
   </Layout>
 </template>
 
@@ -48,15 +49,18 @@ query {
 <script>
 import Author from '~/components/Author.vue'
 import PostCard from '~/components/PostCard.vue'
+import Contact from "../components/Contact";
 
 export default {
   components: {
+    Contact,
     Author,
     PostCard
-  },
-  metaInfo: {
-    title: 'Home'
   }
+  // ,
+  // metaInfo: {
+  //   title: 'Home'
+  // }
 }
 </script>
 
