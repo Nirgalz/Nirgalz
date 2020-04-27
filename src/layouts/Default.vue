@@ -3,19 +3,22 @@
 
         <header class="header">
             <div class="header__left">
-                <!--        <Logo v-if="showLogo" />-->
-                <g-link v-show="$route.path !== '/'" to="/">
-                    <svg class="svg-icon" viewBox="0 0 20 20">
-                        <path d="M18.121,9.88l-7.832-7.836c-0.155-0.158-0.428-0.155-0.584,0L1.842,9.913c-0.262,0.263-0.073,0.705,0.292,0.705h2.069v7.042c0,0.227,0.187,0.414,0.414,0.414h3.725c0.228,0,0.414-0.188,0.414-0.414v-3.313h2.483v3.313c0,0.227,0.187,0.414,0.413,0.414h3.726c0.229,0,0.414-0.188,0.414-0.414v-7.042h2.068h0.004C18.331,10.617,18.389,10.146,18.121,9.88 M14.963,17.245h-2.896v-3.313c0-0.229-0.186-0.415-0.414-0.415H8.342c-0.228,0-0.414,0.187-0.414,0.415v3.313H5.032v-6.628h9.931V17.245z M3.133,9.79l6.864-6.868l6.867,6.868H3.133z"></path>
-                    </svg>
-                </g-link>
-<!--                |-->
-<!--                <g-link to="/about">About</g-link>-->
+                <h1 class="header__left__site-title">
+                    Nicolas Hel - full stack developer
+                </h1>
             </div>
 
-<!--            <div class="header__right">-->
+            <div class="header__right">
+                <p class="header__right__links">
+                    <a href="https://github.com/Nirgalz">
+                        <g-image src="../assets/images/GitHub-Mark-Light-64px.png" width="50" height="50"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nicolas-hel/">
+                        <g-image src="../assets/images/linkedin-2-icon-18-256.png" width="50" height="50"/>
+                    </a>
+                </p>
 <!--                <ToggleTheme />-->
-<!--            </div>-->
+            </div>
         </header>
 
         <main class="main">
@@ -37,10 +40,6 @@
     export default {
         props: {
             showLogo: {default: true}
-        },
-        components: {
-            Logo,
-            ToggleTheme
         }
     }
 </script>
@@ -50,15 +49,32 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: var(--header-height);
+        /*height: 85px;*/
         padding: calc(var(--space) /3);
         top: 0;
         z-index: 10;
+        background-color: var(--bg-content-color);
 
         &__left,
         &__right {
             display: flex;
             align-items: center;
+            &__links {
+                margin: 0;
+                a {
+                    margin: 0 .5em;
+                }
+                img:hover {
+                    box-shadow: 0 0 10px 0 var(--title-color);
+                }
+                img {
+                    border-radius: 50%;
+                }
+            }
+            &__site-title {
+                margin: 0;
+                font-size: calc(var(--base-font-size) *1.2);
+            }
         }
 
         @media screen and (min-width: 1300px) {

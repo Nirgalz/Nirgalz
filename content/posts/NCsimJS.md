@@ -6,7 +6,7 @@ tags: ['javascript']
 series: false
 cover_image: ./images/ncsim.jpg
 canonical_url: false
-description: "Non interactive simulation of an eco-system"
+description: "Non interactive simulation of an eco-system."
 ---
 
 [Source code](https://github.com/Nirgalz/NCsimJS) | [Demo](https://nirgalz.github.io/NCsimJS/)

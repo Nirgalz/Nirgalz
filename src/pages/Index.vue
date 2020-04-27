@@ -1,7 +1,8 @@
 <template>
   <Layout :show-logo="false">
     <!-- Author intro -->
-    <Author :show-title="true" />
+<!--    <Author :show-title="true" />-->
+
     <div class="post-all-tags">
       <g-link class="post-all-tags__link" v-for="edge in $page.tags.edges" :key="edge.node.id" :to="edge.node.path">
         <span>#{{ edge.node.title }}</span>

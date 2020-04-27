@@ -6,7 +6,7 @@ tags: ['javascript']
 series: false
 cover_image: ./images/multichat.jpg
 canonical_url: false
-description: "Experimental P2P discussion app using graphs and local storage"
+description: "Experimental P2P discussion app using graphs."
 ---
 
 [Source code](https://github.com/Nirgalz/multiChat)

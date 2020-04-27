@@ -6,7 +6,7 @@ tags: ['java','spring','vuejs']
 series: false
 cover_image: ./images/vidviz2.jpg
 canonical_url: false
-description: "Video assets management tool"
+description: "Video assets management tool."
 ---
 [Source code](https://github.com/Nirgalz/VidViz)
 
@@ -25,8 +25,8 @@ As of now, it is primarily designed to be used as a local tool.
 ##### Files :
 * Upload files or use them directly using the file system. The app will update its content.
 * Upload json files associated with each video to get the metadata of that video you selected.
-* Automatic encoding of video thumbnails for better encoding experience.
-* Search, filter, edit and delete your folders.
+* Automatic encoding of video thumbnails for better viewing experience.
+* Search, filter, edit and delete your collections.
 
 ![alt text](./images/vidviz.jpg "contextual menu")
 ### possible evolutions
