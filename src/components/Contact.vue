@@ -14,7 +14,7 @@
                   method="post"
             >
                 <div>
-                    <label for="firstname">First name</label>
+                    <label class="contact-form__label" for="firstname">First name</label>
                     <br>
                     <input
                             class="contact-form__input"
@@ -26,7 +26,7 @@
                     />
                 </div>
                 <div>
-                    <label for="email">Email</label>
+                    <label class="contact-form__label" for="email">Email</label>
                     <br>
                     <input
                             class="contact-form__input"
@@ -39,7 +39,7 @@
 
                 </div>
                 <div>
-                    <label for="content">Content</label>
+                    <label class="contact-form__label" for="content">Content</label>
                     <br>
                     <textarea
                             class="contact-form__input"
@@ -53,7 +53,7 @@
                 <br>
 <!--                            <div class="g-recaptcha contact-form__content"-->
 <!--                                 data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>-->
-                <button class="contact-form__link contact-form__input" type="submit">Submit</button>
+                <button class="contact-form__link contact-form__submit" type="submit">Submit</button>
             </form>
         </div>
 
@@ -132,6 +132,14 @@
             }
         }
         &__input {
+            width: 100%;
+            background-color: rgb(134, 146, 153);
+            resize: none;
+        }
+        &__label {
+            color: var(--title-color);
+        }
+        &__submit {
             width: 100%;
         }
     }
