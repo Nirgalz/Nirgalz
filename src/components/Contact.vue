@@ -1,36 +1,104 @@
 <template>
     <div class="contact-form content-box">
-        <div class="contact-form__title-box">
-            <svg class="svg-icon contact-form__mail-icon" viewBox="0 0 20 20">
-                <path d="M17.388,4.751H2.613c-0.213,0-0.389,0.175-0.389,0.389v9.72c0,0.216,0.175,0.389,0.389,0.389h14.775c0.214,0,0.389-0.173,0.389-0.389v-9.72C17.776,4.926,17.602,4.751,17.388,4.751 M16.448,5.53L10,11.984L3.552,5.53H16.448zM3.002,6.081l3.921,3.925l-3.921,3.925V6.081z M3.56,14.471l3.914-3.916l2.253,2.253c0.153,0.153,0.395,0.153,0.548,0l2.253-2.253l3.913,3.916H3.56z M16.999,13.931l-3.921-3.925l3.921-3.925V13.931z"></path>
-            </svg>
-            <h2 class="contact-form__title">Contact</h2>
+        <div v-if="errors.length">
+            <b>Please correct the following error(s):</b>
+        <ul>
+            <li v-for="error in errors">{{ error }}</li>
+        </ul>
         </div>
-        <form action="https://www.form-data.com/_functions/submit/b3iz0s4dl6wt31ab4r61b" method="post">
-            <div class="contact-form__content">
-                <label for="firstname">First name</label>
-                <input type="text" name="firstname" id="firstname"/>
-            </div>
-            <div class="contact-form__content">
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email"/>
+        <div v-if="!isFormShow">
+            Thanks for contacting me, I'll get in touch as soon as I can.
+        </div>
+        <div id="form" v-if="isFormShow">
+            <form action="https://www.form-data.com/_functions/submit/b3iz0s4dl6wt31ab4r61b"
+                  method="post"
+            >
+                <div>
+                    <label for="firstname">First name</label>
+                    <br>
+                    <input
+                            class="contact-form__input"
+                            type="text"
+                            v-model="firstname"
+                            id="firstname"
+                            name="firstname"
+                            required
+                    />
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <br>
+                    <input
+                            class="contact-form__input"
+                            type="text"
+                            v-model="email"
+                            name="email"
+                            id="email"
+                            required
+                    />
 
-            </div>
-            <div class="contact-form__content">
-                <label for="content">Content</label>
-                <input type="textarea" name="content" id="content"/>
-            </div>
-            <div class="g-recaptcha contact-form__content"
-                 data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>
-            <button class="contact-form__link contact-form__content" type="submit">Submit</button>
-        </form>
+                </div>
+                <div>
+                    <label for="content">Content</label>
+                    <br>
+                    <textarea
+                            class="contact-form__input"
+                            name="content"
+                            id="content"
+                            v-model="content"
+                            rows="12"
+                            required
+                    />
+                </div>
+                <br>
+<!--                            <div class="g-recaptcha contact-form__content"-->
+<!--                                 data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>-->
+                <button class="contact-form__link contact-form__input" type="submit">Submit</button>
+            </form>
+        </div>
+
     </div>
 
 </template>
 
 <script>
     export default {
-        name: "Contact"
+        name: "Contact",
+        data() {
+            return {
+                errors: [],
+                firstname: null,
+                email: null,
+                content: null,
+                isFormShow : true
+            }
+        },
+        methods:{
+            checkForm: function (e) {
+                this.errors = [];
+
+                if (!this.firstname) {
+                    this.errors.push('Name required.');
+                }
+                if (!this.email) {
+                    this.errors.push('Mail required.');
+                }
+                if (!this.content) {
+                    this.errors.push('Content required.');
+                }
+                if (!this.email.includes('@')) {
+                    this.errors.push('Correct email required.');
+                }
+
+                if (this.errors.length !== 0) {
+                    this.isFormShow = true;
+                    e.preventDefault();
+                }
+                else {
+                    this.isFormShow = false;
+                }
+            }
+        }
     }
 </script>
 
@@ -62,6 +130,9 @@
             &:hover {
                 box-shadow: 0 0 10px 0 var(--title-color);
             }
+        }
+        &__input {
+            width: 100%;
         }
     }
 </style>

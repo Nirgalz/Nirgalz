@@ -4,7 +4,7 @@
         <header class="header">
             <div class="header__left">
                 <h1 class="header__left__site-title">
-                    Nicolas Hel - full stack developer
+                    <g-link to="/" id="header__left__site-title__link">Nicolas Hel - full stack developer</g-link>
                 </h1>
             </div>
 
@@ -55,7 +55,15 @@
         z-index: 10;
         background-color: var(--bg-content-color);
 
-        &__left,
+        &__left {
+            &__site-title {
+                margin: 0;
+                font-size: calc(var(--base-font-size) *1.2);
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
         &__right {
             display: flex;
             align-items: center;
@@ -71,10 +79,7 @@
                     border-radius: 50%;
                 }
             }
-            &__site-title {
-                margin: 0;
-                font-size: calc(var(--base-font-size) *1.2);
-            }
+
         }
 
         @media screen and (min-width: 1300px) {
