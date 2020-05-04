@@ -71,7 +71,7 @@ query Post ($id: ID!) {
 }
 
 .post {
-  max-width: 80%;
+  max-width: 60%;
   padding: 30px;
   margin: auto;
   &__header {
