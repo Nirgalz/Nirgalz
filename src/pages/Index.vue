@@ -1,7 +1,7 @@
 <template>
     <Layout :show-logo="false">
         <h2 class="index-title">
-            Personal Projects
+            Projects
         </h2>
         <div class="post-all-tags">
             <g-link class="post-all-tags__link" v-for="edge in $page.tags.edges" :key="edge.node.id"

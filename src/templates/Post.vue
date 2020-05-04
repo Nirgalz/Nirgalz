@@ -1,16 +1,15 @@
 <template>
   <Layout>
-    <div class="post-title">
-      <h1 class="post-title__text">
-        {{ $page.post.title }}
-      </h1>
-
-<!--      <PostMeta :post="$page.post" />-->
-
-    </div>
-
-    <div class="post content-box">
+    <div class="content-box post">
       <div class="post__header">
+        <div class="post-title">
+          <h1 class="post-title__text">
+            {{ $page.post.title }}
+          </h1>
+
+          <!--      <PostMeta :post="$page.post" />-->
+
+        </div>
         <g-image alt="Cover image" v-if="$page.post.cover_image" :src="$page.post.cover_image" />
       </div>
 
@@ -68,17 +67,18 @@ query Post ($id: ID!) {
 
 <style lang="scss">
 .post-title {
-  padding: calc(var(--space) / 2) 0 calc(var(--space) / 2);
-  text-align: center;
+
 }
 
 .post {
-
+  max-width: 80%;
+  padding: 30px;
+  margin: auto;
   &__header {
-    width: calc(100% + var(--space) * 2);
-    margin-left: calc(var(--space) * -1);
-    margin-top: calc(var(--space) * -1);
-    margin-bottom: calc(var(--space) / 2);
+    /*margin-left: calc(var(--space) * -1);*/
+    /*margin-right: calc(var(--space) * -1);*/
+    /*margin-bottom: calc(var(--space) / 2);*/
+    /*margin-top: calc(var(--space) * -1);*/
     overflow: hidden;
     border-radius: var(--radius) var(--radius) 0 0;
 
@@ -102,8 +102,8 @@ query Post ($id: ID!) {
     }
 
     img {
-      width: calc(100% + var(--space) * 2);
-      margin-left: calc(var(--space) * -1);
+      width: 100%;
+      /*margin-left: calc(var(--space) * -1);*/
       display: block;
       max-width: none;
     }
