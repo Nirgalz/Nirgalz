@@ -124,5 +124,9 @@
         align-items: center;
         justify-content: center;
     }
+    .contact-box {
+        max-width: 1100px;
+        margin: auto;
+    }
 
 </style>
