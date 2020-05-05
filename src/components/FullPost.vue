@@ -1,15 +1,9 @@
 <template>
-    <div class="post-card content-box" :class="{'post-card--has-poster' : post.poster}">
+    <div class="post-card content-box" :class="{'post-card--has-poster' : post.poster}" @click="onClickCard(post)">
         <div class="post-card__content">
             <h4 class="post-card__title" v-html="post.title"/>
             <PostMeta class="post-card__meta" :post="post"/>
             <p class="post-card__description" v-html="post.description"/>
-
-            <div class="post-card__link"
-                 @click="onClickCard(post)"
-            >
-                Link
-            </div>
 
             <g-image alt="Cover image" v-if="post.cover_image" class="post-card__image" :src="post.cover_image"/>
             <div class="post__content" v-html="post.content" />
@@ -91,23 +85,13 @@
             cursor: pointer;
         }
 
+
         &__tags {
             z-index: 1;
             position: relative;
 
         }
 
-        &__link {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.0;
-            overflow: hidden;
-            text-indent: -9999px;
-            z-index: 0;
-        }
         &__meta {
             position: absolute;
             right: calc(var(--space) * 1);
