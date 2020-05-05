@@ -33,6 +33,7 @@ export default {
     PostMeta,
     PostTags
   },
+  props : ['project'],
   metaInfo () {
     return {
       title: this.$page.post.title,

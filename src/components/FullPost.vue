@@ -6,12 +6,13 @@
             <p class="post-card__description" v-html="post.description"/>
 
             <div class="post-card__link"
-                    @click="onClickCard(post)"
+                 @click="onClickCard(post)"
             >
                 Link
             </div>
 
             <g-image alt="Cover image" v-if="post.cover_image" class="post-card__image" :src="post.cover_image"/>
+            <div class="post__content" v-html="post.content" />
             <div class="post-card__footer">
 
 
@@ -32,8 +33,8 @@
         },
         props: ['post'],
         methods : {
-            onClickCard(post) {
-                this.$emit("project", post);
+            onClickCard() {
+                this.$emit("closeproject");
             }
         }
     }
@@ -41,9 +42,10 @@
 
 <style lang="scss" scoped>
     .post-card {
-        margin-bottom: var(--space);
         position: relative;
-
+        max-width: 60%;
+        padding: 30px;
+        margin: auto;
         &__header {
             margin-left: calc(var(--space) * -1);
             margin-right: calc(var(--space) * -1);
@@ -85,7 +87,7 @@
         }
 
         &:hover {
-            box-shadow: 0 0 10px 0 var(--title-color);
+            box-shadow: 0 0 10px 0 var(--link-color);
             cursor: pointer;
         }
 
