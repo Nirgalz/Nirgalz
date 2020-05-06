@@ -104,11 +104,21 @@
         },
         methods: {
             onClickedProject(project) {
+
                 this.project = project;
+                let data = Object.assign({}, this.$route.query);
+                data['project'] = project.title;
+                this.$router.push({name : 'home', query : data})
             },
             onCloseProject() {
                 this.project = null;
                 window.scrollTo(0,0);
+                this.$router.push({name : 'home', query : ""})
+            }
+        },
+        updated() {
+            if (Object.keys(this.$router.currentRoute.query).length === 0 && this.$router.currentRoute.query.constructor === Object ) {
+                this.project = null;
             }
         }
 
