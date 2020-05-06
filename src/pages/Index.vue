@@ -105,7 +105,7 @@
         methods: {
             onClickedProject(project) {
 
-                this.project = project;
+                // this.project = project;
                 let data = Object.assign({}, this.$route.query);
                 data['project'] = project.title;
                 this.$router.push({name : 'home', query : data})
@@ -119,6 +119,13 @@
         updated() {
             if (Object.keys(this.$router.currentRoute.query).length === 0 && this.$router.currentRoute.query.constructor === Object ) {
                 this.project = null;
+            } else {
+                let edges = this.$page.posts.edges;
+                for (let i = 0 ; i < edges.length ; i++) {
+                    if (edges[i].node.title === this.$router.currentRoute.query.project) {
+                        this.project = edges[i].node
+                    }
+                }
             }
         }
 
