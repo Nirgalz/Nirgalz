@@ -43,6 +43,7 @@
     .post-card {
         margin-bottom: var(--space);
         position: relative;
+        height: 360px;
 
         &__header {
             margin-left: calc(var(--space) * -1);
@@ -55,6 +56,10 @@
             &:empty {
                 display: none;
             }
+        }
+        &__image {
+            overflow: hidden;
+            height: 135px;
         }
 
         &__description {
