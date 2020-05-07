@@ -200,6 +200,7 @@
 
             &:hover {
                 box-shadow: 0 0 10px 0 var(--title-color);
+                cursor: pointer;
             }
         }
     }
