@@ -4,16 +4,17 @@
             Projects
         </h2>
         <div class="post-all-tags">
-            <g-link class="post-all-tags__link" v-for="edge in $page.tags.edges" :key="edge.node.id"
-                    :to="edge.node.path">
+            <div class="post-all-tags__link" v-for="edge in $page.tags.edges" :key="edge.node.id"
+                 @click="filterTags(edge.node.id)"
+                    >
                 <span>#{{ edge.node.title }}</span>
-            </g-link>
+            </div>
 
         </div>
         <div class="posts">
-            <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"
+            <PostCard v-for="edge in posts" :key="edge.node.id" :post="edge.node"
                       @project="onClickedProject"
-                      v-if="project === null"
+                      v-if="project === null && hasTag(edge.node)"
             />
 
             <FullPost
@@ -99,7 +100,9 @@
         },
         data() {
             return {
-                project: null
+                project: null,
+                filteredTag: [],
+                posts : {}
             }
         },
         methods: {
@@ -108,27 +111,74 @@
                 // this.project = project;
                 let data = Object.assign({}, this.$route.query);
                 data['project'] = project.title;
-                this.$router.push({name : 'home', query : data})
+                this.$router.push({name: 'home', query: data})
             },
             onCloseProject() {
                 this.project = null;
-                window.scrollTo(0,0);
-                this.$router.push({name : 'home', query : ""})
+                window.scrollTo(0, 0);
+                this.$router.push({name: 'home', query: ""})
+            },
+            filterTags(tag) {
+                if (tag === "ALL") {
+                    this.resetTags();
+                    this.resetPosts();
+                }
+                else {
+                    this.filteredTag = [];
+                    this.filteredTag.push(tag);
+                    this.filterPosts(tag);
+                }
+            },
+            filterPosts(tag) {
+                for (let i = 0 ; i < this.posts.length ; i++) {
+                    for (let j = 0; j < this.posts[i].node.tags.length ; j++) {
+                        if (this.posts[i].node.tags[j].id === tag) {
+                            this.filteredTag.push(this.posts[i].node.tags[j].id)
+                        }
+                    }
+                }
+            },
+            resetTags() {
+                let edges = this.$page.posts.edges;
+                for (let i = 0; i < edges.length; i++) {
+                    for (let j = 0; j < edges[i].node.tags.length; j++) {
+                        if (!this.filteredTag.includes(edges[i].node.tags[j].id)) {
+                            this.filteredTag.push(edges[i].node.tags[j].id);
+                        }
+                    }
+                }
+            },
+            resetPosts() {
+                this.posts = this.$page.posts.edges;
+            },
+            hasTag(node) {
+                for (let i = 0 ; i < node.tags.length ; i++) {
+
+                    if (this.filteredTag.includes(node.tags[i].id)) {
+
+                        return true
+                    }
+                }
+                return false;
             }
         },
         updated() {
-            if (Object.keys(this.$router.currentRoute.query).length === 0 && this.$router.currentRoute.query.constructor === Object ) {
+            if (Object.keys(this.$router.currentRoute.query).length === 0 && this.$router.currentRoute.query.constructor === Object) {
                 this.project = null;
             } else {
                 let edges = this.$page.posts.edges;
-                for (let i = 0 ; i < edges.length ; i++) {
+                for (let i = 0; i < edges.length; i++) {
                     if (edges[i].node.title === this.$router.currentRoute.query.project) {
                         this.project = edges[i].node
                     }
                 }
             }
+        },
+        mounted() {
+            this.resetTags();
+            this.resetPosts();
+            this.$page.tags.edges.splice(0,0,{node: {id : "ALL", title: "ALL"}});
         }
-
     }
 </script>
 
