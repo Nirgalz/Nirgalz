@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="contact-form content-box">
+            <p>Feel free to contact me if you have a project needing some technical help or if you have any question. I will answer as soon as possible.</p>
             <div v-if="errors.length">
                 <b>Please correct the following error(s):</b>
                 <ul>

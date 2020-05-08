@@ -16,10 +16,10 @@ As of now, it is primarily designed to be used as a local tool.
 ### features :
 ##### Videos :
 * Control multiple videos at once : play/pause, video speed, auto-loop, show/hide controls.
-* Select/unselect. 
-    * Hide/view videos
-    * Download videos associated json files. 
-    * Delete videos and json files.
+* Select/unselect videos
+* Hide/view videos
+* Download videos associated json files. 
+* Delete videos and json files.
 * Contextual menu to open file in system browser or download json.
 
 ##### Files :

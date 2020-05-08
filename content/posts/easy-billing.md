@@ -11,11 +11,30 @@ description: "Simple desktop billing app for freelancers."
 
 [Source code](https://github.com/Nirgalz/easy-billing)
 
+Minimalistic billing desktop app for freelancers.
+
 Simply keep track of your bills and clients, print them in pdf.
 
-The bill layout is made for one specific context, but can be customized using html and css.
+You can change the layout, it's simple html and css (result.html and print.css situated in files/bills/).
+
+To add or remove fields, you just do it in files/bills/newbill.html form and files/bills/result.html layout, the scripts will do the rest.
+
+May not be relevant for all countries, made for a french designer.
+
+### Libraries used :
+
+* Electron 
+* Nnedb 
+* Jquery
+* Bootstrap
+
+### features :
+
+* Editable personal data
+* Editable client's list
+* Bills' data is stored and can be edited
+* Print to pdf
+
 
 ![alt text](./images/easy-billing2.jpg "bill pdf")
 
-This app is not maintained anymore and may contain security issues that can be resolved by updating dependencies.
-Also, it shouldn't be used as the main way to store history of professional bills without securing how data is saved.
