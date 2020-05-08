@@ -7,7 +7,7 @@
             </p>
             <h4 class="about__title">Methodology</h4>
             <p>
-                My goal is to identify your needs and develop for you the best solution possible for your specific needs.
+                My goal is to identify your needs and develop with you the best solution possible.
                 I prefer to work on small iterations and make you part of the development process so that we can get to the best result possible in the least amount of time.
                 Having worked with various different technologies, I can make technical choices that will best serve your projects.
             </p>
