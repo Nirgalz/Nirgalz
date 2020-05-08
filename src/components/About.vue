@@ -23,10 +23,15 @@
 
 <style lang="scss">
     .about {
-        max-width: 90%;
+        max-width: 80%;
         display: flex;
         &__title {
             margin-top: 20px;
          }
+    }
+    @media only screen and (max-width: 800px) {
+        .about {
+            max-width: 100%;
+        }
     }
 </style>

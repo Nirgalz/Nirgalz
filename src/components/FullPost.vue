@@ -35,7 +35,9 @@
 </script>
 
 <style lang="scss" scoped>
-    .post-card {
+
+
+        .post-card {
         position: relative;
         max-width: 60%;
         padding: 30px;
@@ -98,4 +100,10 @@
             top: calc(var(--space) * 1);
         }
     }
+
+        @media only screen and (max-width: 800px) {
+            .post-card {
+                max-width: 100%;
+            }
+        }
 </style>

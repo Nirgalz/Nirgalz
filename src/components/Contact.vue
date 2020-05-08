@@ -133,6 +133,7 @@
 
             &:hover {
                 box-shadow: 0 0 10px 0 var(--title-color);
+                cursor: pointer;
             }
         }
 
@@ -146,5 +147,10 @@
             color: var(--title-color);
         }
 
+    }
+    @media only screen and (max-width: 800px) {
+        .contact-form {
+            max-width: 100%;
+        }
     }
 </style>
